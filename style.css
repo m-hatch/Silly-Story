@@ -80,7 +80,10 @@ table {
 }
 .story-title {
   font-family: 'Gloria Hallelujah', cursive;
-  font-size: 1.1em;
+  font-size: 1.2em;
+}
+.help-text {
+  font-size: .8em;
 }
 .entry {
   margin-top: 40px;

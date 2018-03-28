@@ -107,5 +107,9 @@
   button.addEventListener('click', function() {
     telling.words.saveAnswer();
   });
+  wordInput.addEventListener('keydown', function(e) {
+    if (e.keyCode === 13)
+      telling.words.saveAnswer();
+  });
   
 })();

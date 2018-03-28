@@ -5,7 +5,9 @@
   const wordInput = document.querySelector('.word__input');
   const wordtype = document.querySelector('.word__wordtype');
   const button = document.querySelector('.continue-btn');
+  const play = document.querySelector('.play-btn');
   const entry = document.querySelector('.entry');
+  const result = document.querySelector('.result');
   const sillyStory = document.querySelector('.story');
 
   // vars
@@ -40,6 +42,7 @@
         if (index < arr.length - 1)
           html += answers[index];
       });
+      result.classList.toggle('result--active');
       sillyStory.innerHTML = html;
     }
   }
@@ -110,6 +113,11 @@
   wordInput.addEventListener('keydown', function(e) {
     if (e.keyCode === 13)
       telling.words.saveAnswer();
+  });
+
+  // play again
+  play.addEventListener('click', function() {
+    location.reload();
   });
   
 })();

@@ -121,13 +121,19 @@ table {
   box-sizing: border-box;
   text-transform: uppercase;
 }
+.result {
+  display: none;
+}
+.result--active {
+  display: block;
+}
 .story {
   font-family: 'Gloria Hallelujah', cursive;
   padding: 5% 10%;
   line-height: 1.8;
 }
 /* reset button */
-.continue-btn {
+.btn {
   background: none;
   border: 0;
   color: inherit;
@@ -140,12 +146,12 @@ table {
      -moz-user-select: none;
       -ms-user-select: none;
 }
-.continue-btn::-moz-focus-inner {
+.btn::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
 /* custom styles */
-.continue-btn {
+.btn {
   background-color: rgb(65,105,225);
   border: 1px solid rgb(0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0.1);

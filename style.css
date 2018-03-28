@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
 .container {
   position: fixed;
   width: 100%;
@@ -27,6 +29,7 @@ h1 {
   border: 2px solid;
 }
 h2 {
+  font-family: 'Gloria Hallelujah', cursive;
   font-size: 1.1em;
 }
 .word {
@@ -63,9 +66,10 @@ h2 {
   bottom: -24px;
   width: 100%;
   box-sizing: border-box;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 .story {
+  font-family: 'Gloria Hallelujah', cursive;
   padding: 5% 10%;
   line-height: 1.8;
 }

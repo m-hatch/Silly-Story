@@ -6,6 +6,7 @@ const button = document.querySelector('.continue-btn');
 
 // vars
 const stories = [];
+let telling;
 let answers = [];
 
 class Story {
@@ -26,7 +27,26 @@ class Story {
 
 class Words {
   constructor(types) {
+    this.index = 0;
     this.types = types;
+    this.askForWord = this.askForWord.bind(this);
+    this.getAnswer = this.getAnswer.bind(this);
+  }
+
+  askForWord() {
+    if (this.index < this.types.length) {
+      wordtype.innerHTML = this.types[this.index];
+      wordInput.focus();
+      this.index++;
+    }
+  }
+
+  getAnswer() {
+    if (this.index > 0) {
+      answers.push(wordInput.value || '');
+    }
+    wordInput.value = '';
+    this.askForWord();
   }
 }
 
@@ -44,3 +64,9 @@ stories.push(new Story(
 
 // randomly choose a story to display
 telling = stories[random(0, stories.length)];
+
+// display each input in sequence
+telling.words.askForWord();
+button.addEventListener('click', function() {
+  telling.words.getAnswer();
+});

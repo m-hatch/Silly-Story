@@ -5,7 +5,7 @@
   background: rgb(251, 204, 28);
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 14px;
-  font-size: 45px;
+  font-size: 40px;
   line-height: 88px;
   color: #fff;
   text-align: center;
@@ -64,4 +64,8 @@ h2 {
   width: 100%;
   box-sizing: border-box;
   text-transform: capitalize;
+}
+.story {
+  padding: 5% 10%;
+  line-height: 1.8;
 }

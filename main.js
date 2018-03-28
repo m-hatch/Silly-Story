@@ -3,6 +3,8 @@
 const wordInput = document.querySelector('.word__input');
 const wordtype = document.querySelector('.word__wordtype');
 const button = document.querySelector('.continue-btn');
+const entry = document.querySelector('.entry');
+const sillyStory = document.querySelector('.story');
 
 // vars
 const stories = [];
@@ -23,6 +25,17 @@ class Story {
     Story.id++;
     return Story.id;
   }
+
+  showStory() {
+    let html = '';
+    entry.setAttribute('style', 'display: none');
+    this.text.forEach((line, index, arr) => {
+      html += line;
+      if (index < arr.length - 1)
+        html += answers[index];
+    });
+    sillyStory.innerHTML = html;
+  }
 }
 
 class Words {
@@ -30,18 +43,23 @@ class Words {
     this.index = 0;
     this.types = types;
     this.askForWord = this.askForWord.bind(this);
-    this.getAnswer = this.getAnswer.bind(this);
+    this.saveAnswer = this.saveAnswer.bind(this);
   }
 
   askForWord() {
+    if (this.index === this.types.length - 1) {
+      button.innerHTML = 'Get Silly Story';
+    }
     if (this.index < this.types.length) {
       wordtype.innerHTML = this.types[this.index];
       wordInput.focus();
       this.index++;
+    } else {
+      telling.showStory();
     }
   }
 
-  getAnswer() {
+  saveAnswer() {
     if (this.index > 0) {
       answers.push(wordInput.value || '');
     }
@@ -68,5 +86,5 @@ telling = stories[random(0, stories.length)];
 // display each input in sequence
 telling.words.askForWord();
 button.addEventListener('click', function() {
-  telling.words.getAnswer();
+  telling.words.saveAnswer();
 });

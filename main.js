@@ -1,7 +1,7 @@
 (function(){
 
   // DOM elements
-  const sillyTitle = document.querySelector('.title');
+  const sillyTitle = document.querySelector('.story-title');
   const wordInput = document.querySelector('.word__input');
   const wordtype = document.querySelector('.word__wordtype');
   const button = document.querySelector('.continue-btn');

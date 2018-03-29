@@ -77,9 +77,9 @@
     }
   }
 
-  // function to generate random number
-  function random(min, max) {
-    return Math.floor(Math.random()*(max-min)) + min;
+  // function to select a random object from array
+  function randomValueFromArray(array){
+    return array[Math.floor(Math.random()*array.length)];
   }
 
   // initialize stories
@@ -102,7 +102,7 @@
   ));
 
   // randomly choose a story to display
-  telling = stories[random(0, stories.length)];
+  telling = randomValueFromArray(stories);
   telling.showTitle();
   telling.words.askForWord();
 
